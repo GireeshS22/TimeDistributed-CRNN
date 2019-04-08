@@ -7,7 +7,7 @@ Created on Mon Mar 11 22:55:33 2019
 
 #General configurations
 window_height = 64  #windown height
-window_width = 64   #window width
+window_width = 32   #window width
 window_shift = window_width - 2 #window shift
 
 #CNN related configurations

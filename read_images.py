@@ -78,7 +78,7 @@ def split_frames(path):
     
     for slide in range(0, w // window_width):
         this_frame = image[:, slide * window_width : (window_width) * (slide+1)]
-        this_frame = np.reshape(this_frame, (window_width, window_width, 1))
+        this_frame = np.expand_dims(this_frame, 2)
         frames[slide] = this_frame
         
     return frames
@@ -110,6 +110,7 @@ def prepareData(path):
         y_train.append(returnClasses(annotation))
         
         x_train_len = np.asarray([len(im_train[i]) for i in range(len(im_train))])
+        x_train_len = (x_train_len/18).astype(int)
         y_train_len = np.asarray([len(y_train[i]) for i in range(len(y_train))])
         
         x_train[record] = split_frames(path)

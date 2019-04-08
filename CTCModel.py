@@ -840,7 +840,7 @@ class CTCModel:
         """
 
         y_pred, labels, input_length, label_length = args
-        return K.ctc_batch_cost(labels, y_pred, input_length, label_length)#, ignore_longer_outputs_than_inputs=True)
+        return K.ctc_batch_cost(labels, y_pred, input_length, label_length)#, ignore_longer_outputs_than_inputs=False)
         # return warpctc_tensorflow.ctc(y_pred, labels, label_length, input_length)
 
     @staticmethod
